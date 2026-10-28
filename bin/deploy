@@ -24,7 +24,7 @@ echo "Pushed $(git rev-parse --short HEAD), Plesk is deploying"
 url_of() { case "$1" in index.html) echo /;; *) echo "/$1";; esac; }
 mismatched() {
   local file
-  for file in $(git ls-files '*.html' '*.txt' '*.xml'); do
+  for file in $(git ls-files '*.html' '*.txt' '*.xml' '*.css' '*.svg'); do
     [ "$(curl -s "$SITE$(url_of "$file")?v=$RANDOM" | shasum -a 256 | cut -d' ' -f1)" = "$(git show "HEAD:$file" | shasum -a 256 | cut -d' ' -f1)" ] \
       || echo "$file"
   done
