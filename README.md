@@ -15,3 +15,6 @@ bin/deploy
 Plesk пишет только файлы репозитория и не трогает остальное в `httpdocs`. Файл, удалённый из репозитория, удаляется и с сайта.
 
 В корне сайта кроме файлов репозитория лежит `core-continuity/` — отдельное PHP-приложение со своим `index.php`. Его в репозитории нет, Plesk его не трогает. Поэтому в `.htaccess` нельзя задавать `DirectoryIndex index.html`: правило наследуется подпапками, и `core-continuity/` начинает отвечать 403. `bin/deploy` проверяет, что `/core-continuity/login` отдаёт 200.
+
+Картинка для превью ссылок `og.png` (1200×630) снята с `bin/og.html`:
+`"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new --hide-scrollbars --allow-file-access-from-files --force-device-scale-factor=1 --window-size=1200,630 --screenshot="$PWD/og.png" "file://$PWD/bin/og.html"`

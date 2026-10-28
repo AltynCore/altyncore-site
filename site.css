@@ -42,3 +42,5 @@ footer { border-top: 1px solid var(--border); max-width: none; padding: 24px max
   nav a:not([lang]) { display: none; }
   section { padding: 48px 0; }
 }
+footer { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+footer a { color: var(--foreground); }
