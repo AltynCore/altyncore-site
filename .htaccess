@@ -1,0 +1,6 @@
+AddDefaultCharset UTF-8
+
+RewriteEngine On
+
+# The repository's own files are not part of the site
+RewriteRule ^(README\.md|zettel(/.*)?|bin(/.*)?|\.git(/.*)?|\.gitignore)$ - [R=404,L]
